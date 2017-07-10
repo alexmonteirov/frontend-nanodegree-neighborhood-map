@@ -1,0 +1,126 @@
+body {
+    overflow-x: hidden;
+}
+/* styles for wrapper and page-wrapper */
+
+#wrapper {
+    padding-left: 0;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+#wrapper.open {
+    padding-left: 250px;
+}
+#menu-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #031634;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+#wrapper.open #menu-wrapper {
+    width: 250px;
+}
+#page-wrapper {
+    width: 100%;
+    position: absolute;
+}
+#wrapper.open #page-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+#map {
+    margin-top: 1vh;
+    height: 80vh;
+}
+.error {
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+}
+/* styles for display button */
+
+.menu-nav {
+    position: relative;
+    top: 20px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu-nav li {
+    text-indent: 25px;
+    line-height: 50px;
+}
+.menu-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+.menu-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.menu-nav li a:active,
+.menu-nav li a:focus {
+    text-decoration: none;
+}
+.input-group.poi-search {
+    margin-top: 20px;
+}
+.poi-categories {
+    margin-left: 25px;
+    margin-top: 50px;
+}
+.poi-categories label {
+    display: block;
+}
+.poi-categories span {
+    color: #fff;
+}
+/* styles infoWindow Google Maps API*/
+
+.info-window {
+    text-align: center;
+}
+.info-window-header h1 {
+    font-size: 16px;
+}
+.info-window-body {
+    padding: 4px;
+    border: 1px solid #ccc;
+}
+/* Off-Canvas queries*/
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 0;
+    }
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+    #menu-wrapper {
+        width: 0;
+    }
+    #wrapper.open #menu-wrapper {
+        width: 250px;
+    }
+    #page-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+    #wrapper.open #page-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
